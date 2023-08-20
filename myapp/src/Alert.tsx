@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 type Props = {
   type?: string;
@@ -10,6 +10,10 @@ type Props = {
 
 export function Alert({ type = 'information', heading, children, closable, onClose }: Props) {
   const [visible, setVisible] = useState(true);
+
+  useEffect(() => {
+    console.log('Effect called');
+  });
   if (!visible) {
     return null;
   }
